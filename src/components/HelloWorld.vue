@@ -1,113 +1,59 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+  <div>
+    <h3>INDEX</h3>
+    <div v-for="(item,index) in ronterList" :key="index" @click="jumpTo(item)">
+      <p class="linelyP" :style="isOdd(index)">{{item.caseName}} .............. <span>{{item.name}}</span>
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+  export default {
+    name: 'HelloWorld',
+    data() {
+      return {
+        ronterList: [
+          {caseName: 'FilterTest', to: "/FilterTest", name: 'FilterTest 集合测试'},
+          {caseName: 'v-on', to: "/on", name: 'OnTest'},
+          {caseName: 'v-bind', to: "/bind", name: 'BindTest'},
+        ]
+      }
+    },
+    mounted() {
+    },
+    methods: {
+      jumpTo(item) {
+        this.$router.push(item.to)
+      },
+      isOdd(index) {
+        return index % 2 == 0 ? 'background-image: linear-gradient(to left, #33FFFF , #FF3399);' : 'background-image: linear-gradient(to right, #33FFFF , #FF3399);'
+      }
+    },
+    computed: {}
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  .linelyP {
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px auto;
+    color: blanchedalmond;
+    font-size: 20px;
+    font-family: Tahoma;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+
+  .linelyP span{
+    color: greenyellow;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
 </style>
