@@ -37,7 +37,8 @@
     line-height: 50px;
     cursor: pointer;
   }
-  .v-on-box p{
+
+  .v-on-box p {
     font-size: 20px;
     color: cyan;
   }

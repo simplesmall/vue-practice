@@ -17,6 +17,7 @@
           {caseName: 'FilterTest', to: "/FilterTest", name: 'FilterTest 集合测试'},
           {caseName: 'v-on', to: "/on", name: 'OnTest'},
           {caseName: 'v-bind', to: "/bind", name: 'BindTest'},
+          {caseName: '组件开发', to: "/components", name: 'Components'},
         ]
       }
     },

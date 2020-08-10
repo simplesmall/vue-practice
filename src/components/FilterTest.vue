@@ -10,7 +10,9 @@
         <span v-for="(item,index) in bookList" :key="index">{{item.name}} --- {{item.author}}</span>
       </div>
       <div class="list">
-        <p @click="addNode" style="cursor: pointer;border: 1px solid red;margin:0 50px;border-radius: 3px;background:cyan;color: #000">添加元素后的数组  [反复点我查看效果]</p>
+        <p @click="addNode"
+           style="cursor: pointer;border: 1px solid red;margin:0 50px;border-radius: 3px;background:cyan;color: #000">
+          添加元素后的数组 [反复点我查看效果]</p>
         <span v-for="(item,index) in bookList" :key="index">{{item.name}} --- {{item.author}}</span>
       </div>
       <div class="list">
@@ -22,7 +24,8 @@
       <div class="list">
         <p>累计counter</p>
         <span style="font-size: 24px">{{counter}}</span>
-        <input type="button" value="点我增加counter的值" style="width: 50%;margin: 4px auto;background:cyan;cursor:pointer;" @click="counter++">
+        <input type="button" value="点我增加counter的值" style="width: 50%;margin: 4px auto;background:cyan;cursor:pointer;"
+               @click="counter++">
       </div>
       <div class="list"></div>
     </div>
@@ -41,14 +44,14 @@
           {name: 'Java special journey', author: '马丁.盯的丁'},
           {name: '颈椎病康复指南', author: 'lovely coder'},
         ],
-        isAdd:true,
-        counter:0
+        isAdd: true,
+        counter: 0
       }
     },
-    methods:{
-      addNode(){
+    methods: {
+      addNode() {
         this.counter++;
-        let addNode = {name:'添加进来的Java书',author:'Myself'}
+        let addNode = {name: '添加进来的Java书', author: 'Myself'}
         this.isAdd = !this.isAdd
         // 方法一  添加数组元素
         /*this.$set(this.bookList,5,{
@@ -56,9 +59,9 @@
           author:'me'
         })*/
         // 方法二  添加数组元素
-        if (this.isAdd){
+        if (this.isAdd) {
           this.bookList.push(addNode)
-        }else{
+        } else {
           this.bookList.pop()
         }
       }
@@ -96,7 +99,8 @@
     color: white;
     border-radius: 3px;
   }
-  .list p{
+
+  .list p {
     color: orangered;
   }
 </style>

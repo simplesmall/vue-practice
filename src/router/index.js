@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import OnTest from "../components/OnTest";
 import BindTest from "../components/BindTest";
 import FilterTest from "../components/FilterTest";
+import Components from "../components/Components";
 
 Vue.use(Router)
 
@@ -29,5 +30,10 @@ export default new Router({
       name: 'BindTest',
       component: BindTest
     },
+    {
+      path: '/components',
+      name:'Components',
+      component: Components
+    }
   ]
 })
