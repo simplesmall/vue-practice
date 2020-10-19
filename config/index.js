@@ -10,7 +10,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/base': {     //使用"/api"来代替"http://f.apiplus.cn"
+        target: 'http://mczaiyun.top',    //源地址
+        changeOrigin: true,    //改变源
+        pathRewrite: {
+          '^/base': ''     //路径重写，也可以写成 '^/api': 'http://f.apiplus.cn'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -20,7 +28,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */

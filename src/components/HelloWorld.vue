@@ -18,6 +18,8 @@
           {caseName: 'v-on', to: "/on", name: 'OnTest'},
           {caseName: 'v-bind', to: "/bind", name: 'BindTest'},
           {caseName: '组件开发', to: "/components", name: 'Components'},
+          {caseName: 'Excel', to: "/excel", name: 'ExcelReview'},
+          {caseName: 'sheetJS', to: "/sheetJS", name: 'SheetJSTest'}
         ]
       }
     },
