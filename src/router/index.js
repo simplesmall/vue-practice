@@ -7,6 +7,7 @@ import FilterTest from "../components/FilterTest";
 import Components from "../components/Components";
 import ExcelReview from "../components/Test/ExcelReview";
 import SheetJSTest from "../components/Test/SheetJSTest";
+import LuckySheetDemo from "../components/Test/LuckySheetDemo";
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/sheetJS',
       name:'SheetJSTest',
       component: SheetJSTest
+    },
+    {
+      path: '/LuckySheetDemo',
+      name:'LuckySheetDemo',
+      component: LuckySheetDemo
     }
   ]
 })
